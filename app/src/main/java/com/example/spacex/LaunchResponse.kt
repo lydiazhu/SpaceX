@@ -3,24 +3,26 @@ package com.example.spacex
 import com.squareup.moshi.Json
 
 data class LaunchResponse(
-    @Json(name="links")
+    @Json(name = "links")
     val links: Links,
-    @Json(name="name")
+    @Json(name = "name")
     val name: String,
-    @Json(name="date_utc")
+    @Json(name = "date_utc")
     val date: String,
-    @Json(name="success")
-    val success: Boolean?
+    @Json(name = "success")
+    val success: Boolean?,
+    @Json(name = "upcoming")
+    val upcoming: Boolean
 )
 
 data class Links(
-    @Json(name="patch")
+    @Json(name = "patch")
     val patch: Patch
 )
 
 data class Patch(
-    @Json(name="small")
+    @Json(name = "small")
     val small: String,
-    @Json(name="large")
+    @Json(name = "large")
     val large: String
 )

@@ -18,13 +18,19 @@ class LaunchAdapter(private val dataSet: List<LaunchResponse>) : RecyclerView.Ad
             .placeholder(R.drawable.ic_launcher_background).into(holder.patchImage)
         holder.patchDate.text = dataSet[position].date
         dataSet[position].success.let { success->
-            if (success!!) {
-                holder.patchStatus.text = holder.itemView.resources.getString(R.string.success)
-                holder.patchStatus.setTextColor(holder.itemView.resources.getColor(R.color.green, null))
-            }
-            else {
-                holder.patchStatus.text = holder.itemView.resources.getString(R.string.failure)
-                holder.patchStatus.setTextColor(holder.itemView.resources.getColor(R.color.red, null))
+            when {
+                success == null -> {
+                    holder.patchStatus.text = holder.itemView.resources.getString(R.string.upcoming)
+                    holder.patchStatus.setTextColor(holder.itemView.resources.getColor(R.color.purple_500, null))
+                }
+                success -> {
+                    holder.patchStatus.text = holder.itemView.resources.getString(R.string.success)
+                    holder.patchStatus.setTextColor(holder.itemView.resources.getColor(R.color.green, null))
+                }
+                else -> {
+                    holder.patchStatus.text = holder.itemView.resources.getString(R.string.failure)
+                    holder.patchStatus.setTextColor(holder.itemView.resources.getColor(R.color.red, null))
+                }
             }
         }
     }
