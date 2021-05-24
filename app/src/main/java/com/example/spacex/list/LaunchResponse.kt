@@ -1,4 +1,4 @@
-package com.example.spacex
+package com.example.spacex.list
 
 import com.squareup.moshi.Json
 

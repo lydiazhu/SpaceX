@@ -1,7 +1,7 @@
 package com.example.spacex.network
 
-import com.example.spacex.LaunchResponse
-import com.example.spacex.RocketResponse
+import com.example.spacex.list.LaunchResponse
+import com.example.spacex.detail.RocketResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 

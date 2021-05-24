@@ -1,10 +1,12 @@
-package com.example.spacex
+package com.example.spacex.list
 
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.spacex.detail.DetailActivity
+import com.example.spacex.R
 
 class LaunchAdapter(private val dataSet: List<LaunchResponse>) : RecyclerView.Adapter<ItemViewHolder>() {
 

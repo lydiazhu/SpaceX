@@ -1,4 +1,4 @@
-package com.example.spacex
+package com.example.spacex.detail
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

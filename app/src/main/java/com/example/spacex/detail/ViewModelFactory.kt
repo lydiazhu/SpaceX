@@ -1,4 +1,4 @@
-package com.example.spacex
+package com.example.spacex.detail
 
 
 import androidx.lifecycle.ViewModel

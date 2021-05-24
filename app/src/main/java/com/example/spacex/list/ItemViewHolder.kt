@@ -1,9 +1,10 @@
-package com.example.spacex
+package com.example.spacex.list
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.spacex.R
 
 class ItemViewHolder(view: View): RecyclerView.ViewHolder(view) {
     val patchImage : ImageView = view.findViewById(R.id.patchImage)
