@@ -6,17 +6,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class LaunchAdapter(private val dataSet: List<LaunchResponse>) : RecyclerView.Adapter<PatchViewHolder>() {
+class LaunchAdapter(private val dataSet: List<LaunchResponse>) : RecyclerView.Adapter<ItemViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PatchViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.launch_item, parent, false)
-        return PatchViewHolder(view)
+        return ItemViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: PatchViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         holder.patchName.text = dataSet[position].name
         Glide.with(holder.itemView).load(dataSet[position].links.patch.small)
-            .placeholder(R.drawable.ic_launcher_background).into(holder.patchImage)
+            .placeholder(R.drawable.ic_launcher_foreground).into(holder.patchImage)
         holder.patchDate.text = dataSet[position].date
         dataSet[position].success.let { success->
             when {
