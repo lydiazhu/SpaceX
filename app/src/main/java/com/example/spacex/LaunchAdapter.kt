@@ -1,5 +1,6 @@
 package com.example.spacex
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +33,12 @@ class LaunchAdapter(private val dataSet: List<LaunchResponse>) : RecyclerView.Ad
                     holder.patchStatus.setTextColor(holder.itemView.resources.getColor(R.color.red, null))
                 }
             }
+        }
+        holder.itemView.setOnClickListener {
+            val intent = Intent(holder.itemView.context, DetailActivity::class.java).apply {
+                putExtra("ROCKET_ID", dataSet[position].rocket)
+            }
+            holder.itemView.context.startActivity(intent)
         }
     }
 

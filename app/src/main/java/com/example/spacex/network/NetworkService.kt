@@ -1,9 +1,8 @@
-package com.example.spacex
+package com.example.spacex.network
 
 import retrofit2.Retrofit
 import retrofit2.Retrofit.Builder
 import retrofit2.converter.moshi.MoshiConverterFactory
-import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 
 class NetworkService {
     private val retrofit: Retrofit = Builder()

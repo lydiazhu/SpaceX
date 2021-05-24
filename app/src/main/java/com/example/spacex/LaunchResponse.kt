@@ -12,7 +12,9 @@ data class LaunchResponse(
     @Json(name = "success")
     val success: Boolean?,
     @Json(name = "upcoming")
-    val upcoming: Boolean
+    val upcoming: Boolean,
+    @Json(name = "rocket")
+    val rocket: String
 )
 
 data class Links(
